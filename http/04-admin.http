@@ -1,0 +1,12 @@
+@baseUrl = http://localhost:3000
+@adminToken = PASTE_ADMIN_TOKEN_HERE
+@reviewId = PASTE_REVIEW_ID_HERE
+
+### Hide Review
+PATCH {{baseUrl}}/admin/reviews/{{reviewId}}/hide
+Content-Type: application/json
+Authorization: Bearer {{adminToken}}
+
+{
+  "reason": "Spam or inappropriate content"
+}

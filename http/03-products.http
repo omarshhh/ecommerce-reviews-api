@@ -1,0 +1,8 @@
+@baseUrl = http://localhost:3000
+@productId = PASTE_PRODUCT_ID_HERE
+
+### Get Product Reviews
+GET {{baseUrl}}/products/{{productId}}/reviews?page=1&limit=10
+
+### Get Rating Summary
+GET {{baseUrl}}/products/{{productId}}/rating-summary
