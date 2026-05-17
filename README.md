@@ -1,98 +1,286 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# E-Commerce Reviews API
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Production-style NestJS Product Reviews & Ratings API built with:
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+- NestJS
+- PostgreSQL
+- TypeORM
+- JWT Authentication
+- Swagger
+- Docker
+- Jest Testing
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+# Features
 
-## Project setup
+## Authentication
+- JWT login
+- Customer authentication
+- Admin authorization
 
-```bash
-$ npm install
-```
+## Reviews
+- Create review for purchased products only
+- Prevent duplicate reviews
+- Update own review
+- Paginated product reviews
 
-## Compile and run the project
+## Rating Analytics
+- Average rating
+- Rating distribution
+- Total reviews count
 
-```bash
-# development
-$ npm run start
+## Admin Moderation
+- Hide inappropriate reviews
 
-# watch mode
-$ npm run start:dev
+## Validation & Business Rules
+- Product must exist
+- Order must exist
+- Order must belong to authenticated user
+- Order must be delivered
+- Product must exist inside the order
+- One review per product per order
 
-# production mode
-$ npm run start:prod
-```
+---
 
-## Run tests
+# Tech Stack
 
-```bash
-# unit tests
-$ npm run test
+- NestJS
+- TypeScript
+- PostgreSQL
+- TypeORM
+- Docker Compose
+- Swagger
+- Jest
 
-# e2e tests
-$ npm run test:e2e
+---
 
-# test coverage
-$ npm run test:cov
-```
+# Project Setup
 
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+## 1. Clone repository
 
 ```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
+git clone https://github.com/omarshhh/ecommerce-reviews-api.git
+cd ecommerce-reviews-api
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+---
 
-## Resources
+## 2. Install dependencies
 
-Check out a few resources that may come in handy when working with NestJS:
+```bash
+npm install
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+---
 
-## Support
+## 3. Create environment file
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Windows
 
-## Stay in touch
+```bash
+copy .env.example .env
+```
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### macOS/Linux
 
-## License
+```bash
+cp .env.example .env
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+---
+
+## 4. Start Docker containers
+
+```bash
+npm run docker:up
+```
+
+This starts:
+
+- PostgreSQL
+- pgAdmin
+
+---
+
+## 5. Seed database
+
+```bash
+npm run seed
+```
+
+This inserts:
+
+- Users
+- Products
+- Orders
+- Order items
+
+---
+
+## 6. Start application
+
+```bash
+npm run start:dev
+```
+
+---
+
+# Swagger Documentation
+
+```txt
+http://localhost:3000/api
+```
+
+---
+
+# pgAdmin
+
+```txt
+http://localhost:5050
+```
+
+## Login
+
+```txt
+Email: admin@admin.com
+Password: admin
+```
+
+## PostgreSQL Connection
+
+```txt
+Host: postgres
+Port: 5432
+Username: postgres
+Password: postgres
+Database: ecommerce_reviews
+```
+
+---
+
+# Seeded Users
+
+## Customer
+
+```txt
+email: omar@test.com
+password: 123456
+```
+
+## Admin
+
+```txt
+email: admin@test.com
+password: 123456
+```
+
+---
+
+# Available Scripts
+
+## Development
+
+```bash
+npm run start:dev
+```
+
+## Run Tests
+
+```bash
+npm run test
+```
+
+## Docker Up
+
+```bash
+npm run docker:up
+```
+
+## Docker Down
+
+```bash
+npm run docker:down
+```
+
+## Reset Docker Volumes
+
+```bash
+npm run docker:reset
+```
+
+## Seed Database
+
+```bash
+npm run seed
+```
+
+---
+
+# API Endpoints
+
+## Auth
+
+```http
+POST /auth/login
+```
+
+---
+
+## Reviews
+
+```http
+POST /reviews
+PATCH /reviews/:reviewId
+GET /products/:productId/reviews
+```
+
+---
+
+## Analytics
+
+```http
+GET /products/:productId/rating-summary
+GET /products/:productId/rating-distribution
+```
+
+---
+
+## Admin
+
+```http
+PATCH /admin/reviews/:reviewId/hide
+```
+
+---
+
+# Postman / REST Client Testing Flow
+
+1. Seed database
+2. Login customer
+3. Login admin
+4. Create review
+5. Update review
+6. Get product reviews
+7. Get rating summary
+8. Hide review
+9. Verify hidden review
+10. Verify updated analytics
+
+---
+
+# Testing
+
+Implemented Jest unit tests for:
+
+- Review creation
+- Validation rules
+- Authorization
+- Duplicate prevention
+- Review hiding
+
+---
+
+# Author
+
+Omar Shammout
