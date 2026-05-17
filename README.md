@@ -254,7 +254,7 @@ PATCH /admin/reviews/:reviewId/hide
 
 ---
 
-# Postman / REST Client Testing Flow
+# Postman Testing Flow
 
 1. Seed database
 2. Login customer
