@@ -281,6 +281,18 @@ Implemented Jest unit tests for:
 
 ---
 
+# Postman Collection
+
+The exported Postman collection is available in:
+
+```txt
+/postman/E-Commerce Reviews API.postman_collection.json
+```
+
+Import it into Postman and run the API testing flow.
+
+---
+
 # Author
 
 Omar Shammout
